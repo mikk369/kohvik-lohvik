@@ -4,10 +4,18 @@ import axios from 'axios';
 function App() {
   const [loading, setLoading] = useState(true);
   const [isNavOpen, setIsnavopen] = useState(false);
+  const [expandedPosts, setExpandedPosts] = useState({});
   const [posts, setPosts] = useState([]);  
 
   const toggleNav = () => {
     setIsnavopen(!isNavOpen);
+  };
+
+  const toggleExpanded = (postId) => {
+    setExpandedPosts((prev) => ({
+      ...prev,
+      [postId]: !prev[postId],
+    }));
   };
   
   useEffect(() => {
@@ -79,7 +87,14 @@ function App() {
               ) : posts.length > 0 ? (
                 posts.map((post) => (
                   <div key={post.id} className="post">
-                    <p>{post.message || post.story}</p>
+                    <p className={expandedPosts[post.id]  ? 'expanded' : 'truncated'}>
+                      {post.message || post.story}
+                    </p>
+                    {(post.message || post.story).length > 400 && (
+                      <span className="show-more-btn" onClick={() => toggleExpanded(post.id)}>
+                        {expandedPosts[post.id] ? 'Show Less' : 'Show More'}
+                      </span>
+                    )}
                     {post.image && <img src={post.image} alt="Post image"/>}
                     <div className="footer">
                       <div className="view-facebook">
