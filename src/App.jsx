@@ -24,7 +24,7 @@ function App() {
           const accessToken = 'access-token';
             try {
               // Fetch posts with media attachments directly
-              const postsResponse = await axios.get(`https://graph.facebook.com/me/feed?fields=id,message,attachments&access_token=${accessToken}`);
+              const postsResponse = await axios.get(`https://graph.facebook.com/me/feed?fields=id,message,attachments,created_time&access_token=${accessToken}`);
               const postsData = postsResponse.data.data;
 
               // Map over posts and get images directly from attachments
