@@ -22,34 +22,25 @@ function App() {
     // Define the function to fetch posts and images
         const fetchPostsAndImages = async () => {
           const accessToken = 'access-token';
-          try {
-            // Fetch all posts
-            const postsResponse = await axios.get(`https://graph.facebook.com/me/feed?access_token=${accessToken}`);
-            const postsData = postsResponse.data.data;
-            
-            // Fetch images for each post using the post ID
-            const postsWithImages = await Promise.all(
-              postsData.map(async (post) => {
-                try {
-                  const imagesResponse = await axios.get(
-                    `https://graph.facebook.com/${post.id}/attachments?access_token=${accessToken}`
-                  );
-                  const image = imagesResponse.data.data[0]?.media?.image?.src || null;
-                  return { ...post, image };
-                } catch (error) {
-                  return { ...post, image: null };
-                } 
-              })
-            );
-            setPosts(postsWithImages);
-          } catch (error) {
-            console.error('Error fetching posts and images:', error);
-          } finally {
-            setLoading(false);
-          }
-      };
-        fetchPostsAndImages();
-  }, []);
+            try {
+              // Fetch posts with media attachments directly
+              const postsResponse = await axios.get(`https://graph.facebook.com/me/feed?fields=id,message,attachments&access_token=${accessToken}`);
+              const postsData = postsResponse.data.data;
+
+              // Map over posts and get images directly from attachments
+              const postsWithImages = postsData.map(post => {
+                const image = post.attachments?.data[0]?.media?.image?.src || null;
+                return { ...post, image };
+              });
+                    setPosts(postsWithImages);
+              } catch (error) {
+                    console.error('Error fetching posts and images:', error);
+              } finally {
+                    setLoading(false);
+              }
+          };
+            fetchPostsAndImages();
+    }, []);
 
   return (
     <>
@@ -90,7 +81,7 @@ function App() {
                     <p className={expandedPosts[post.id]  ? 'expanded' : 'truncated'}>
                       {post.message || post.story}
                     </p>
-                    {(post.message || post.story).length > 400 && (
+                    {(post.message || post.story)?.length > 400 && (
                       <span className="show-more-btn" onClick={() => toggleExpanded(post.id)}>
                         {expandedPosts[post.id] ? 'Show Less' : 'Show More'}
                       </span>
