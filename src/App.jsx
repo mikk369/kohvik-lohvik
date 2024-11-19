@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [isNavOpen, setIsnavopen] = useState(false);
   const [expandedPosts, setExpandedPosts] = useState({});
-  const [posts, setPosts] = useState([]);  
+  const [posts, setPosts] = useState([]);
 
   const toggleNav = () => {
     setIsnavopen(!isNavOpen);
@@ -17,6 +17,8 @@ function App() {
       [postId]: !prev[postId],
     }));
   };
+
+  
   
   useEffect(() => {
     // Define the function to fetch posts and images
@@ -40,6 +42,24 @@ function App() {
               }
           };
             fetchPostsAndImages();
+
+            const landingSection = document.querySelector('.landing-section');
+            const obs = new IntersectionObserver(
+            function (entries) {
+              const ent = entries[0];
+              if(ent.isIntersecting === false) {
+                document.body.classList.add('changeNavLiColor');
+              } else {
+                document.body.classList.remove('changeNavLiColor');
+              }
+            },
+            {
+              root: null,
+              threshold: 0,
+              rootMargin: '-96px',
+            }
+          );
+          obs.observe(landingSection);
     }, []);
 
   return (
@@ -53,7 +73,7 @@ function App() {
             <ul className="main-nav-list">
               <li><a href="" className="main-nav-link">Esileht</a></li>
               <li><a href="" className="main-nav-link">Menüü</a></li>
-              <h2 className="nav-title">KOHVIK LOHVIK</h2>
+              <h2 className="heading-secondary">KOHVIK LOHVIK</h2>
               <li><a href="" className="main-nav-link">Meie lugu</a></li>
               <li><a href="" className="main-nav-link">Väärtused</a></li>
             </ul>
@@ -66,13 +86,13 @@ function App() {
       <main>
         <section className="landing-section">
           <div className="landing">
-            <h1 className="langing-message">Lohviku kogemusõppe akadeemia</h1>
+            <h1 className="heading-primary">Lohviku kogemusõppe akadeemia</h1>
           </div>
         </section>
         <section className="section-hero">
           <div className="hero">
-            <h2 className="post-heading">Postitused</h2>
             <div className="posts">
+            <h2 className="heading-tertiary">Postitused</h2>
               {loading ? (
                  <div className="loading-spinner"></div>
               ) : posts.length > 0 ? (
@@ -82,12 +102,14 @@ function App() {
                       {post.message || post.story}
                     </p>
                     {(post.message || post.story)?.length > 400 && (
-                      <span className="show-more-btn" onClick={() => toggleExpanded(post.id)}>
-                        {expandedPosts[post.id] ? 'Show Less' : 'Show More'}
-                      </span>
+                      <div className="show-container">
+                        <span className="show-more-btn" onClick={() => toggleExpanded(post.id)}>
+                          {expandedPosts[post.id] ? 'Show Less' : 'Show More'}
+                        </span>
+                      </div>
                     )}
                     {post.image && <img src={post.image} alt="Post image"/>}
-                    <div className="footer">
+                    <div className="post-footer">
                       <div className="view-facebook">
                         <a href={`https://www.facebook.com/${post.id}`} target="_blank" rel="noopener noreferrer">
                           View on Facebook
@@ -103,7 +125,38 @@ function App() {
                 <p className='no-posts'>No posts to display</p>
               )}
             </div>
-            <div className="carousel-section">Carousel</div>
+            <div className="section-supporters">
+              <h2 className='heading-tertiary'>Lohvik toetajad ja koostööpartnerid läbi aastate</h2>
+                <div className="supporter-logos">
+                  <img src="kohalik.png" alt="kohalik logo" className="supporter-image" />
+                  <img src="noa.png" alt="nõa logo" className="supporter-image" />
+                  <img src="pohikool.png" alt="nõo põhikool" className="supporter-image" />
+                  <img src="sportland.png" alt="sportland logo" className="supporter-image" />
+                  <img src="teamhood.png" alt="teamhood logo" className="supporter-image" />
+                  <img src="terminal.png" alt="terminal logo" className="supporter-image" />
+                </div>
+                <div className="supporter-names">
+                  <p>Fifaa</p>
+                  <p>Premia</p>
+                  <p>Ektaco CompuCach kassasüsteemid</p>
+                  <p>A le Coq</p>
+                  <p>Coffee People</p>
+                  <p>Kaupmees</p>
+                  <p>Schneider Electric Eesti</p>
+                  <p>Elva Vald</p>
+                  <p>KOP Kohalik Omaalgatuse Programm</p>
+                  <p>LEADER programm</p>
+                </div>
+            </div>
+            <div className="footer">
+              <div className="footer-content">
+                <p className="contacts">
+                  <span><i className="fa fa-envelope"></i>kohvik.elva@gmail.com</span>
+                  <span><i className="fa fa-map-marker"></i>Nõo, Veski 27-2</span>
+                  <span><i className="fa fa-phone"></i>+372 5030353</span>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
