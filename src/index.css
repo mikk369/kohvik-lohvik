@@ -74,6 +74,7 @@ body {
   font-weight: 400;
   color: #333;
 }
+
 /********************/
 /*HEADINGS*/
 /********************/
@@ -92,9 +93,13 @@ body {
   text-shadow: 0 1px 0 black;
 }
 
+.headingHighlight {
+  color: #FDDE5A;
+}
+
 .heading-secondary {
   font-family: 'Barrio', sans-serif;
-  font-size: 6.2rem;
+  font-size: 4.4rem;
   color: #FDDE5A;
   text-shadow: 0 1px 0 black;
 }
@@ -102,12 +107,14 @@ body {
 .heading-tertiary {
   font-size: 3rem;
   line-height: 1.2;
-  margin-bottom: 3rem;
+  margin-bottom: 4.8rem;
   color: #2c3e50;
   text-transform: uppercase;
   letter-spacing: 0.75px;
+  border-bottom: 2px solid #3498db;
+  padding-top: 9.6rem;
   display: inline-block;
-  border-bottom: 2px solid #3498db; 
+
 }
 
 /********************/
@@ -180,17 +187,18 @@ body {
 /* change nav links and heading color after scrolling */
 .changeNavLiColor .main-nav-link:link,
 .changeNavLiColor .main-nav-link:visited,
-.changeNavLiColor  .heading-secondary {
-  color: black;  
+.changeNavLiColor .heading-secondary {
+  color: #2c3e50;  
 }
 .changeNavLiColor .main-nav-link:link:hover,
 .changeNavLiColor .main-nav-link:visited:hover {
- border-bottom: 1px solid black;
+ border-bottom: 1px solid #2c3e50;
 }
 
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #FDDE5A;
+  border-bottom: solid 1px #FDDE5A;
 }
 
 /* MOBiLE BUTTON*/
@@ -263,7 +271,7 @@ body {
 /********************/
 .landing-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-              url('/lohvikbg.jpg'); 
+  url('/lohvikbg.jpg'); 
   background-size: cover;  
   background-position: center; 
   background-repeat: no-repeat;  
@@ -271,6 +279,142 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/********************/
+/*ABOUT US*/
+/********************/
+.about-us-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f9f9f9, #fffef6, #f9f9f9);
+  position: relative; 
+}
+
+.about-us-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f0f4f8);
+  height: 5.2rem;
+}
+
+.about-us {
+  max-width: 140rem;
+  padding: 0 3.2rem;
+  font-size: 1.9rem;
+  line-height: 1.6;
+}
+
+.about-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text-box {
+  text-align: left;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 3rem 6.4rem;
+  row-gap: 12.3rem;
+}
+
+.about-icon-box {
+  font-size: 12.8rem;
+  display: flex;
+  align-items: center;
+
+}
+
+.about-icon-box:nth-child(odd) {
+  justify-content: flex-end;
+  padding-right: 9.8rem;
+}
+
+.about-icon-box:nth-child(even) {
+  justify-content: flex-start;
+  padding-left: 9.8rem;
+}
+
+/********************/
+/*ABOUT US ICONS*/
+/********************/
+.about-icon i{
+  transition: transform 0.3s ease;
+}
+
+.about-icon:hover i {
+  transform: scale(1.3) rotate(-10deg); 
+}
+
+.lightbulb-icon{
+  color: #FF7043;
+}
+
+.question-icon {
+  color: #1976D2;;
+}
+
+.chart-icon {
+  color: green;
+}
+
+.bullseye-icon {
+  color: orangered;
+}
+
+/********************/
+/*MENU*/
+/********************/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  border-radius: 8px;
+  display: inline-block;
+}
+.close {
+  top: -4rem; 
+  right: -4rem;
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10; 
+}
+
+.close i {
+  font-size: 4.4rem;
+}
+
+.menuimg {
+  width: 100%;
+  max-width: 65rem;
+  border-radius: 8px;
+}
+
+/* add no scroll when modal open */
+body.no-scroll {
+  overflow: hidden;
 }
 
 /********************/
@@ -285,7 +429,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 9.6rem 8.6rem;
+  padding: 0rem 8.6rem;
   margin: auto;
   color: #333;
 }
@@ -402,7 +546,7 @@ body {
 /********************/
 
 .section-supporters {
- padding: 4.8rem 3.2rem 12.8rem 3.2rem ;
+ padding: 0rem 3.2rem 12.8rem 3.2rem ;
 }
 
 .supporter-logos {
