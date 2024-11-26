@@ -105,13 +105,13 @@ body {
 }
 
 .heading-tertiary {
+  font-family: 'Permanent Marker', sans-serif;
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 4.8rem;
   color: #2c3e50;
   text-transform: uppercase;
   letter-spacing: 0.75px;
-  border-bottom: 2px solid #3498db;
   padding-top: 9.6rem;
   display: inline-block;
 
@@ -156,7 +156,6 @@ body {
   background-color: rgba(255, 255, 255, 0.1);  
   backdrop-filter: blur(15px);  
   -webkit-backdrop-filter: blur(10px);  /* Safari compatibility */
-  /* border: 1px solid rgba(255, 255, 255, 0.3);   */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -171,7 +170,6 @@ body {
   align-items: center;
   gap: 4.8rem;
   justify-content: center;
-  text-transform: uppercase;
 }
 
 .main-nav-link:link,
@@ -288,7 +286,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f9f9f9, #fffef6, #f9f9f9);
+  background: linear-gradient(135deg, #f9f9f9, #fffef6, #eef5ff);
   position: relative; 
 }
 
@@ -298,14 +296,14 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f0f4f8);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eef5ff);
   height: 5.2rem;
 }
 
 .about-us {
   max-width: 140rem;
   padding: 0 3.2rem;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 
@@ -418,6 +416,48 @@ body.no-scroll {
 }
 
 /********************/
+/*VALUES*/
+/********************/
+.values-modal-content {
+  background: #fff; /* White background for content */
+  padding: 2rem; /* Spacing inside the modal */
+  border-radius: 10px; /* Smooth corners */
+  max-width: 80rem; /* Limit the width for readability */
+  margin: 10rem auto; /* Center the modal horizontally */
+  position: relative; /* Position for the close button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background-color: #fff;
+  padding-bottom: 4.4rem;
+  justify-content: center;
+}
+
+.grid-item {
+  background-color: #f9f9f9;
+  padding: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.modal-subheading {
+  font-size: 18px; /* Slightly smaller than the main heading */
+  color: #555; /* Muted dark gray for contrast */
+  font-weight: 500; /* Medium weight for emphasis */
+  text-align: center; /* Align center for consistency with the main heading */
+  margin-bottom: 20px; /* Space between subheading and grid */
+  line-height: 1.4; /* Comfortable line spacing */
+}
+
+/********************/
 /*POSTS FROM FACEBOOK*/
 /********************/
 .hero {
@@ -429,9 +469,24 @@ body.no-scroll {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   padding: 0rem 8.6rem;
   margin: auto;
   color: #333;
+  background: linear-gradient(135deg, #eef5ff, #e5f1ff, #f9f9f9);
+}
+
+.posts::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5.2rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+  z-index: 1; /* Ensure it stays behind content */
+  pointer-events: none; /* Prevent interaction issues */
+  
 }
 
 .loading-spinner {
@@ -449,6 +504,11 @@ body.no-scroll {
   gap: 2rem;
   margin-bottom: 2rem;
   background-color: #fff;
+}
+
+.post:last-of-type {
+  margin-bottom: -3rem;
+  z-index: 2;
 }
 
 /* show more button */
@@ -546,7 +606,9 @@ body.no-scroll {
 /********************/
 
 .section-supporters {
- padding: 0rem 3.2rem 12.8rem 3.2rem ;
+ padding: 3.2rem 3.2rem 12.8rem;
+ position: relative;
+ background: linear-gradient(135deg, #f9f9f9, #fffef6, #eef5ff);
 }
 
 .supporter-logos {
