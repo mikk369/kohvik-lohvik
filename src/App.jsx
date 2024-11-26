@@ -61,29 +61,46 @@ function App() {
           );
           obs.observe(landingSection);
 
-          //MODAL\\
+          //MENU MODAL\\
           const menuLink = document.getElementById('menu-link');
-          const modal = document.getElementById('menu-modal');
-          const closeButton = modal.querySelector('.close');
+          const menuModal = document.getElementById('menu-modal');
+          const menuCloseButton = menuModal.querySelector('.close');
 
           // Open modal when clicking the Menüü link
           menuLink.addEventListener('click', (e) => {
             e.preventDefault();
-            modal.style.display = 'block';
+            menuModal.style.display = 'block';
             document.body.classList.add("no-scroll");
           });
-
           // Close modal when clicking the close button
-          closeButton.addEventListener('click', () => {
-            modal.style.display = 'none';
+          menuCloseButton.addEventListener('click', () => {
+            menuModal.style.display = 'none';
             document.body.classList.remove("no-scroll");
           });
 
-          // Close modal when clicking outside the modal content
+          //VALUES MODAL\\
+          const valuesLink = document.getElementById('valueLink');
+          const valuesModal = document.getElementById('values-modal');
+          const valuesCloseButton = valuesModal.querySelector('.close');
+
+          valuesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            valuesModal.style.display = 'block';
+            document.body.classList.add("no-scroll");
+          });
+
+          valuesCloseButton.addEventListener('click', () => {
+            valuesModal.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+          });
+
           window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-              modal.style.display = 'none';
+            if (e.target === menuModal) {
+              menuModal.style.display = 'none';
               document.body.classList.remove("no-scroll");
+            } else if (e.target === valuesModal) {
+              valuesModal.style.display = 'none';
+              document.body.classList.remove('no-scroll');
             }
           });
     }, []);
@@ -103,7 +120,7 @@ function App() {
               <h2 className="heading-secondary">KOHVIK LOHVIK</h2>
               <li><a href="#fb-posts" className="main-nav-link">Postitused</a></li>
               <li><a href="#supporters" className="main-nav-link">Toetajad</a></li>
-              <li><a href="#our-values" className="main-nav-link">Väärtused</a></li>
+              <li><a href="#our-values" className="main-nav-link" id="valueLink">Väärtused</a></li>
             </ul>
           </nav>
           <button className="btn-mobile-nav" onClick={toggleNav}>
@@ -169,12 +186,70 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="section-hero">
-          <div className="hero">
+          <section className="hero">
             <div id="menu-modal" className="modal">
               <div className="modal-content">
-                <span className="close" title='Close'><i class="fa fa-times"></i></span>
+                <span className="close" title='Close'><i className="fa fa-times"></i></span>
                 <img src="./menuimg.png" alt="Lohiku Kohviku Menüü" className="menuimg"/>
+              </div>
+            </div>
+            <div id="values-modal" className="modal">
+              <div className="values-modal-content">
+                <h2 className='heading-tertiary'>MTÜ Teeklubi eetilised põhimõtted</h2>
+                <p className='modal-subheading'>Demokraatlik juhtimine ja toimimine</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi on selge ja arusaadav missioon. Ühendus 
+                    järgib oma missiooni täitmisel põhikirja, sisemisi dokumente ja organisatsiooni toimimisstandardeid.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi väljendab ja esindab inimeste erinevaid huvisid ja vajadusi. Ühendus kaasab inimesi 
+                    rahvahariduse, osalusdemokraatia, eestkoste ja muude vormide kaudu kodanikuühiskonna edendamisse.</div>
+                  <div className="grid-item">3. MTÜ Teeklubi kui ühiskonnaliikmete vabatahtlik ühendus väärtustab oma liikmeid, kindlustab ühenduse demokraatliku 
+                    juhtimise, hoiab ühenduse juhtivkogud ja töötajad vastutavana, reageerib nende väärtegudele.</div>
+                  <div className="grid-item">4. MTÜ Teeklubi peab inimeste kaasamist ja vabatahtlikku tööd kodanikuühiskonna 
+                    alustalaks, väärtustab kodanikke ja nende vabatahtlikku tööd.</div>
+                  <div className="grid-item">5. MTÜ Teeklubi püüdleb järjekindlalt oskusliku tegutsemise, professionaalsuse 
+                    ja täiuslikkuse poole, et saavutada parimaid töötulemusi.</div>
+                  <div className="grid-item">6. MTÜ Teeklubi, saades vahendid oma tegevuseks peamiselt 
+                    toetajatelt ja annetajatelt, kasutab saadud vahendeid otstarbekalt ja sihipäraselt.</div>
+                </div>
+                <p className='modal-subheading'>Kodanikujulgus ja hoolivus</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi ilmutab kodanikujulgust võitluses ühiskonnas esineva ebaõigluse vastu.</div>
+                  <div className="grid-item">2. ÜMTÜ Teeklubi ei kasuta ega propageeri vägivalda oma seisukohtade väljendamiseks, eesmärkide ja avalikkuse tähelepanu saavutamiseks.</div>
+                </div>
+                <p className='modal-subheading'>Vahendite ja vara heaperemehelik ning säästlik kasutamine</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi kasutab loodus-, inim- ja vaimuvara ning ainelisi ja varalisi vahendeid heaperemehelikult ning säästlikult, arvestades tänaste ja tulevaste põlvede vajadustega.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi lähtub nii taotleja kui toetajana headest rahastamistavadest, eelarvete põhjendatusest ja läbipaistvusest ning hoidub topeltrahastamisest.</div>
+                </div>
+                <p className='modal-subheading'>Vastutus ja aruandmiskohustus</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi annab oma tegevusest aru ning vastutab asutajate, liikmete, toetajate, annetajate ja avalikkuse ees.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi peab oluliseks aruandevalmidust, mille tagab oskusjuhtimine, sisemine aruandlus ja juhindumine heast raamatupidamistavast.</div>
+                  <div className="grid-item">3. MTÜ Teeklubi avalikustab oma tegevuse sisulise ja rahalise aruande vähemalt kord aastas.</div>
+                </div>
+                <p className='modal-subheading'>Avatus ja läbipaistvus</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi missiooni, liikmeskonna, tegevuse ja rahastamise kohta peab olema avalik ja arusaadav.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi suhtleb avatult ja otsekoheselt oma nime all ega tegutse anonüümselt.</div>
+                  <div className="grid-item">3. MTÜ Teeklubi on avatud uutele ideedele ja erinevatele seisukohtadele ning koostööle ühiste eesmärkide saavutamiseks.</div>
+                </div>
+                <p className='modal-subheading'>Sõltumatus ja huvide konflikti vältimine</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi on oma eesmärgiseadmistes, otsustes ja tegevuses sõltumatu ning hoidub sattumast erakonna, avaliku institutsiooni või äriühingu 
+                    kontrolli alla, millega ta kaotab oma sõltumatuse ja avalikes huvides tegutsemise võime.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi ja seal tegutsevad isikud hoiduvad sattumast huvide konflikti. Huvide konflikti ilmnemisel võtab ühendus tarvitusele vajalikud abinõud selle lõpetamiseks.</div>
+                </div>
+                <p className='modal-subheading'>Sõnapidamine ja ideede autorluse tunnustamine</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi peab kinni nii kirjalikest lepingutest kui suulistest kokkulepetest.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi austab teiste ühenduste ideede ja projektide autorlust.</div>
+                </div>
+                <p className='modal-subheading'>Sallivus</p>
+                <div className="values-grid">
+                  <div className="grid-item">1. MTÜ Teeklubi tunnustab mõtteviiside erinevust, ühenduste ja nende eesmärkide mitmekesisust.</div>
+                  <div className="grid-item">2. MTÜ Teeklubi ei halvusta ega laima teisi ühendusi, nende seisukohti ja neis tegutsevaid isikuid.</div>
+                </div>
+                <span className="close" title='Close'><i className="fa fa-times"></i></span>
               </div>
             </div>
             <section className="posts" id="fb-posts">
@@ -234,9 +309,6 @@ function App() {
                   <p>LEADER programm</p>
                 </div>
             </section>
-            <section className="our-values" id="our-values">
-              <h3 className="heading-tertiary">Väärtused</h3>
-            </section>
             <div className="footer">
               <div className="footer-content">
                 <p className="contacts">
@@ -246,8 +318,7 @@ function App() {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
       </main>
     </>
   );
