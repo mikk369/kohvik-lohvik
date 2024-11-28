@@ -94,13 +94,13 @@ body {
 }
 
 .headingHighlight {
-  color: #FDDE5A;
+  color: #fdde5a;
 }
 
 .heading-secondary {
   font-family: 'Barrio', sans-serif;
   font-size: 4.4rem;
-  color: #FDDE5A;
+  color: #fdde5a;
   text-shadow: 0 1px 0 black;
   white-space: nowrap;
 }
@@ -115,7 +115,6 @@ body {
   letter-spacing: 0.75px;
   padding-top: 9.6rem;
   display: inline-block;
-
 }
 
 /********************/
@@ -153,9 +152,9 @@ body {
   padding: 0 4.8rem;
   flex-grow: 1;
   border-radius: 9rem;
-  background-color: rgba(255, 255, 255, 0.1);  
-  backdrop-filter: blur(15px);  
-  -webkit-backdrop-filter: blur(10px);  /* Safari compatibility */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
 }
@@ -183,17 +182,17 @@ body {
 .changeNavLiColor .main-nav-link:link,
 .changeNavLiColor .main-nav-link:visited,
 .changeNavLiColor .heading-secondary {
-  color: #2c3e50;  
+  color: #2c3e50;
 }
 .changeNavLiColor .main-nav-link:link:hover,
 .changeNavLiColor .main-nav-link:visited:hover {
- border-bottom: 1px solid #2c3e50;
+  border-bottom: 1px solid #2c3e50;
 }
 
 .main-nav-link:hover,
 .main-nav-link:active {
-  color: #FDDE5A;
-  border-bottom: solid 1px #FDDE5A;
+  color: #fdde5a;
+  border-bottom: solid 1px #fdde5a;
 }
 
 /* MOBiLE BUTTON*/
@@ -218,11 +217,11 @@ body {
 /*LANDING SECTION*/
 /********************/
 .landing-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-  url('/lohvikbg.jpg'); 
-  background-size: cover;  
-  background-position: center; 
-  background-repeat: no-repeat;  
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url('/lohvikbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -237,7 +236,7 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #f9f9f9, #fffef6, #eef5ff);
-  position: relative; 
+  position: relative;
 }
 
 .about-us-wrapper::after {
@@ -278,7 +277,6 @@ body {
   font-size: 12.8rem;
   display: flex;
   align-items: center;
-
 }
 
 .about-icon-box:nth-child(odd) {
@@ -294,20 +292,23 @@ body {
 /********************/
 /*ABOUT US ICONS*/
 /********************/
-.about-icon i{
+.about-icon i {
   transition: transform 0.3s ease;
 }
 
-.about-icon:hover i {
-  transform: scale(1.3) rotate(-10deg); 
+.about-icon-box:nth-child(even) .about-icon:hover i {
+  transform: scale(1.3) rotate(-10deg);
+}
+.about-icon-box:nth-child(odd) .about-icon:hover i {
+  transform: scale(1.3) rotate(10deg);
 }
 
-.lightbulb-icon{
-  color: #FF7043;
+.lightbulb-icon {
+  color: #ff7043;
 }
 
 .question-icon {
-  color: #1976D2;;
+  color: #1976d2;
 }
 
 .chart-icon {
@@ -342,12 +343,12 @@ body {
   display: inline-block;
 }
 .close {
-  top: -4rem; 
+  top: -4rem;
   right: -4rem;
   position: absolute;
   color: #fff;
   cursor: pointer;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .close i {
@@ -436,7 +437,6 @@ body.no-scroll {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
   z-index: 1; /* Ensure it stays behind content */
   pointer-events: none; /* Prevent interaction issues */
-  
 }
 
 .loading-spinner {
@@ -534,9 +534,9 @@ body.no-scroll {
 /*LOADING SPINNER*/
 /********************/
 .loading-spinner {
-  position: absolute;  
-  top: 110%;            
-  left: 49%; 
+  position: absolute;
+  top: 110%;
+  left: 49%;
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
   border-radius: 50%;
@@ -547,8 +547,12 @@ body.no-scroll {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /********************/
@@ -556,9 +560,9 @@ body.no-scroll {
 /********************/
 
 .section-supporters {
- padding: 3.2rem 3.2rem 12.8rem;
- position: relative;
- background: linear-gradient(135deg, #f9f9f9, #fffef6, #eef5ff);
+  padding: 3.2rem 3.2rem 12.8rem;
+  position: relative;
+  background: linear-gradient(135deg, #f9f9f9, #fffef6, #eef5ff);
 }
 
 .supporter-logos {
@@ -590,7 +594,6 @@ body.no-scroll {
   text-align: center;
   color: #2c3e50;
   font-size: 1.6rem;
-  
 }
 
 .footer-content {
@@ -608,4 +611,3 @@ body.no-scroll {
 .fa {
   margin-right: 5px;
 }
-
