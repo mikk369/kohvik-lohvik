@@ -44,22 +44,46 @@ function App() {
             fetchPostsAndImages();
 
             const landingSection = document.querySelector('.landing-section');
-            const obs = new IntersectionObserver(
-            function (entries) {
+            const headerElement = document.querySelector('.header');
+            
+            // Function to handle navigation color change
+            function handleNavLiColor(entries) {
               const ent = entries[0];
-              if(ent.isIntersecting === false) {
-                document.body.classList.add('changeNavLiColor');
-              } else {
-                document.body.classList.remove('changeNavLiColor');
+              if (!headerElement.classList.contains('nav-open')) {
+                if (ent.isIntersecting === false) {
+                  document.body.classList.add('changeNavLiColor');
+                } else {
+                  document.body.classList.remove('changeNavLiColor');
+                }
               }
-            },
-            {
+            }
+
+            // IntersectionObserver setup
+            const obs = new IntersectionObserver(handleNavLiColor, {
               root: null,
               threshold: 0,
               rootMargin: '-96px',
-            }
-          );
-          obs.observe(landingSection);
+            });
+
+            // Observe the landing section
+            obs.observe(landingSection);
+
+            // Event listener for nav-open toggle
+            const navToggle = document.querySelector('.btn-mobile-nav');
+            navToggle.addEventListener('click', () => {
+              headerElement.classList.toggle('nav-open');
+
+              // Reset body class when menu opens
+              if (headerElement.classList.contains('nav-open')) {
+                document.body.classList.remove('changeNavLiColor');
+              } else {
+                // Reapply class based on intersection observer logic
+                const ent = obs.takeRecords()[0] || { isIntersecting: true }; // Ensure valid entry
+                if (!ent.isIntersecting) {
+                  document.body.classList.add('changeNavLiColor');
+                }
+              }
+            });
 
           //MENU MODAL\\
           const menuLink = document.getElementById('menu-link');
@@ -111,7 +135,6 @@ function App() {
         <a href="#">
           <img src="lohviklogo.png" alt="site logo" className="logo" />
         </a>
-        <div className="nav-wrapper">
         <nav className="main-nav">
             <ul className="main-nav-list">
               <li><a href="#landing" className="main-nav-link">Esileht</a></li>
@@ -126,7 +149,6 @@ function App() {
           <button className="btn-mobile-nav" onClick={toggleNav}>
             <ion-icon className="icon-mobile-nav" name={isNavOpen ? "close-outline" : "menu-outline"}></ion-icon>
           </button>
-        </div>
       </header>
       <main>
         <section className="landing-section" id="landing">
