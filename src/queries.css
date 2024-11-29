@@ -216,8 +216,15 @@
   .post .expanded {
     font-size: 1.2rem;
   }
+  .menuimg {
+    width: 100%;
+    max-width: 32rem;
+    border-radius: 8px;
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 /********************/
 /*PRIMARY HEADING 464px, 336px*/
 /********************/
@@ -227,6 +234,9 @@
   }
   .supporter-names {
     font-size: 1.6rem; 
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
   }
 }
  @media (max-width: 21em) { 
