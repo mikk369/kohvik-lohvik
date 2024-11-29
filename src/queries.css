@@ -130,9 +130,11 @@
       flex-direction: column;
       gap: 4.4rem;
     }
-    .header.nav-open .heading-secondary {
+    .header.nav-open .heading-secondary,
+    .header .heading-secondary {
       order: -1;
     }
+   
     .main-nav-link:link,
     .main-nav-link:visited {
       font-size: 3rem;
@@ -177,7 +179,13 @@
 /********************/
 @media (max-width: 36em) {
   .heading-primary {
-    font-size: 3.4rem;
+    white-space: pre-wrap; 
+    text-align: center; 
+    font-size: 6.2rem;
+
+  }
+  .heading-primary span {
+    display: block; 
   }
   .about-description {
     font-size: 1.3rem;
@@ -218,9 +226,6 @@
 /*PRIMARY HEADING 464px, 336px*/
 /********************/
  @media (max-width: 29em) { 
-  .heading-primary {
-    font-size: 2.6rem;
-  } 
   .footer-content p {
     font-size: 1.2rem;
   }
@@ -230,6 +235,6 @@
 }
  @media (max-width: 21em) { 
   .heading-primary {
-    font-size: 2.3rem;
+    font-size: 5.2rem;
   } 
 }
