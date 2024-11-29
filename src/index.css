@@ -214,7 +214,7 @@ body {
 /********************/
 .landing-section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url('/lohvikbg.jpg');
+    url('/lohvikbg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -569,7 +569,7 @@ body.no-scroll {
 }
 
 .supporter-logos img {
-  height: 5.2rem;
+  height: 4.4rem;
   margin: auto;
 }
 

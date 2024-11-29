@@ -133,7 +133,7 @@ function App() {
     <>
       <header className={`header ${isNavOpen ? 'nav-open' : ''}`}>
         <a href="#">
-          <img src="lohviklogo.png" alt="site logo" className="logo" />
+          <img src="lohviklogo.webp" alt="site logo" className="logo" />
         </a>
         <nav className="main-nav">
             <ul className="main-nav-list">
@@ -212,7 +212,7 @@ function App() {
             <div id="menu-modal" className="modal">
               <div className="modal-content">
                 <span className="close" title='Close'><i className="fa fa-times"></i></span>
-                <img src="./menuimg.png" alt="Lohiku Kohviku Menüü" className="menuimg"/>
+                <img src="./menuimg.webp" alt="Lohiku Kohviku Menüü" className="menuimg"/>
               </div>
             </div>
             <div id="values-modal" className="modal">
@@ -311,12 +311,12 @@ function App() {
             <section className="section-supporters" id="supporters">
               <h3 className='heading-tertiary'>Lohvik toetajad ja koostööpartnerid läbi aastate</h3>
                 <div className="supporter-logos">
-                  <img src="kohalik.png" alt="kohalik logo" className="supporter-image" />
-                  <img src="noa.png" alt="nõa logo" className="supporter-image" />
-                  <img src="pohikool.png" alt="nõo põhikool" className="supporter-image" />
-                  <img src="sportland.png" alt="sportland logo" className="supporter-image" />
-                  <img src="teamhood.png" alt="teamhood logo" className="supporter-image" />
-                  <img src="terminal.png" alt="terminal logo" className="supporter-image" />
+                  <img src="kohalik.webp" alt="kohalik logo" className="supporter-image" />
+                  <img src="noa.webp" alt="nõa logo" className="supporter-image" />
+                  <img src="pohikool.webp" alt="nõo põhikool" className="supporter-image" />
+                  <img src="sportland.webp" alt="sportland logo" className="supporter-image" />
+                  <img src="teamhood.webp" alt="teamhood logo" className="supporter-image" />
+                  <img src="terminal.webp" alt="terminal logo" className="supporter-image" />
                 </div>
                 <div className="supporter-names">
                   <p>Fifaa</p>
