@@ -22,10 +22,6 @@ function Privacypolicy () {
           <h3 className="subsubtitle">Mõisted</h3>
           <ul className="list">
             <li>
-              <strong>Konto</strong> – unikaalne konto, mis on loodud teenusele
-              juurdepääsuks.
-            </li>
-            <li>
               <strong>Ettevõte</strong> (nimetatud ka kui "meie", "me", "meie ettevõte")
               viitab Kohvik Lohvikule.
             </li>
