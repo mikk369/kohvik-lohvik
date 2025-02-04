@@ -462,7 +462,7 @@ body.no-scroll {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -550,6 +550,15 @@ body.no-scroll {
   margin: auto;
 }
 
+.supporter-logos img:last-child {
+  grid-column: 2;
+}
+
+.tootmissusteemid {
+  height: 6.4rem;
+  filter: brightness(1) invert(1);
+}
+
 .supporter-names {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -557,6 +566,9 @@ body.no-scroll {
   font-size: 2rem;
   line-height: 1.8;
   color: #555;
+}
+.supporter-names p:last-child {
+  grid-column: 2;
 }
 /********************/
 /*FOOTER*/
