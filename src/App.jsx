@@ -1,34 +1,22 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [isNavOpen, setIsnavopen] = useState(false);
-  const [expandedPosts, setExpandedPosts] = useState({});
   const [posts, setPosts] = useState([]);
 
   const toggleNav = () => {
     setIsnavopen(!isNavOpen);
   };
-
-  const toggleExpanded = (postId) => {
-    setExpandedPosts((prev) => ({
-      ...prev,
-      [postId]: !prev[postId],
-    }));
-  };
-
-  
   
   useEffect(() => {
     // Define the function to fetch posts and images
         const fetchPostsAndImages = async () => {
-          const accessToken = 'access-token';
             try {
               // Fetch posts with media attachments directly
-              const postsResponse = await axios.get(`https://graph.facebook.com/me/feed?fields=id,message,attachments,created_time&access_token=${accessToken}`);
-              const postsData = postsResponse.data.data;
-
+              const postsResponse = await axios.get("https://fbtest.webcodes.ee/wp-json/token/v1/get-feed");
+              const postsData = postsResponse.data.posts;
               // Map over posts and get images directly from attachments
               const postsWithImages = postsData.map(post => {
                 const image = post.attachments?.data[0]?.media?.image?.src || null;
@@ -277,33 +265,28 @@ function App() {
             <section className="posts" id="fb-posts">
             <h3 className="heading-tertiary">Postitused</h3>
               {loading ? (
-                 <div className="loading-spinner"></div>
+                 <div className="loading-spinner">Loading...</div>
               ) : posts.length > 0 ? (
-                posts.map((post) => (
-                  <div key={post.id} className="post">
-                    <p className={expandedPosts[post.id]  ? 'expanded' : 'truncated'}>
-                      {post.message || post.story}
-                    </p>
-                    {(post.message || post.story)?.length > 400 && (
-                      <div className="show-container">
-                        <span className="show-more-btn" onClick={() => toggleExpanded(post.id)}>
-                          {expandedPosts[post.id] ? 'Show Less' : 'Show More'}
-                        </span>
+                  <div className="post-grid">
+                    {posts.map((post) => (
+                      <div key={post.id} className="post">
+                        {post.image && <img src={post.image} alt="Post image"/>}
+                        <p className="post-content">
+                          {post.message || post.story}
+                        </p>
+                        <div className="post-footer">
+                          <div className="view-facebook">
+                            <a href={`https://www.facebook.com/${post.id}`} target="_blank" rel="noopener noreferrer">
+                              Loe rohkem...
+                            </a>
+                          </div>
+                          <p className="date">
+                            <small>Postitatud: {new Date(post.created_time).toLocaleDateString()}</small>
+                          </p>
+                        </div>
                       </div>
-                    )}
-                    {post.image && <img src={post.image} alt="Post image"/>}
-                    <div className="post-footer">
-                      <div className="view-facebook">
-                        <a href={`https://www.facebook.com/${post.id}`} target="_blank" rel="noopener noreferrer">
-                          View on Facebook
-                        </a>
-                      </div>
-                      <p className="date">
-                        <small>Posted on: {new Date(post.created_time).toLocaleDateString()}</small>
-                      </p>
-                    </div>
+                    ))}
                   </div>
-                ))
               ) : (
                 <p className='no-posts'>No posts to display</p>
               )}
@@ -337,6 +320,9 @@ function App() {
                   <span><i className="fa fa-envelope"></i>kohvik.elva@gmail.com</span>
                   <span><i className="fa fa-map-marker"></i>Nõo, Veski 27-2</span>
                   <span><i className="fa fa-phone"></i>+372 5030353</span>
+                  <span>
+                    <a href="/privaatsuspoliitika" className='policy-linik' target='_blank'>Privaatsuspoliitika</a>
+                  </span>
                 </p>
               </div>
             </div>

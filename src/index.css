@@ -110,7 +110,7 @@ body {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 4.8rem;
-  color: #3b5998;
+  color: #0050A5;
   text-transform: uppercase;
   letter-spacing: 0.75px;
   padding-top: 9.6rem;
@@ -182,11 +182,11 @@ body {
 .changeNavLiColor .main-nav-link:link,
 .changeNavLiColor .main-nav-link:visited,
 .changeNavLiColor .heading-secondary {
-  color: #3B5998;
+  color: #0050A5;
 }
 .changeNavLiColor .main-nav-link:link:hover,
 .changeNavLiColor .main-nav-link:visited:hover {
-  border-bottom: 1px solid #3B5998;
+  border-bottom: 1px solid #0050A5;
 }
 
 .main-nav-link:hover,
@@ -404,23 +404,27 @@ body.no-scroll {
   line-height: 1.4; /* Comfortable line spacing */
 }
 
-/********************/
-/*POSTS FROM FACEBOOK*/
-/********************/
 .hero {
   background-color: #f0f4f8;
   text-align: center;
 }
 
+/********************/
+/*POSTS FROM FACEBOOK*/
+/********************/
 .posts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
   padding: 0rem 8.6rem;
-  margin: auto;
   color: #333;
-  background: linear-gradient(135deg, #eef5ff, #e5f1ff, #f9f9f9);
+  background: linear-gradient(190deg, #eef5ff, #e5f1ff, #f9f9f9);
+  padding-bottom: 3rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 20px;
+  padding: 10px;
 }
 
 .posts::after {
@@ -441,41 +445,20 @@ body.no-scroll {
 }
 
 .post {
-  width: 80%;
-  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
   padding: 2rem;
-  border: 1px solid #e0e0e0;
   border-radius: 9px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   gap: 2rem;
-  margin-bottom: 2rem;
   background-color: #fff;
 }
 
-.post:last-of-type {
-  margin-bottom: -3rem;
-  z-index: 2;
-}
-
-/* show more button */
-.show-more-btn {
-  color: #3b5998;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 5px;
-  display: inline-block;
-}
-
-.show-more-btn:hover {
-  text-decoration: underline;
-}
-
-/* post text truncated by using ellipsis  */
-.truncated {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  text-align: left;
+.post-content {
+  flex-grow: 1;
+  font-size: 1.4rem;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -483,30 +466,24 @@ body.no-scroll {
   -webkit-box-orient: vertical;
 }
 
-.expanded {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  text-align: left;
-}
-
 .post img {
-  width: 60%;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
-  border-radius: 3px;
-  margin-top: 1rem;
+  border-radius: 8px;
 }
 
 .post-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #666;
   margin-top: 1rem;
 }
 
 .view-facebook a {
-  color: #3b5998;
+  color: #0050A5;
   text-decoration: none;
   font-weight: bold;
 }
@@ -660,11 +637,11 @@ body.no-scroll {
 }
 
 a {
-  color: #007bff;
+  color: #2c3e50;
   text-decoration: none;
 }
 
-a:hover {
+ a:hover {
   text-decoration: underline;
 }
 
