@@ -263,14 +263,14 @@ function App() {
               </div>
             </div>
             <section className="posts" id="fb-posts">
-            <h3 className="heading-tertiary">Postitused</h3>
+            <h3 className="heading-tertiary">Uudised</h3>
               {loading ? (
                  <div className="loading-spinner">Loading...</div>
               ) : posts.length > 0 ? (
                   <div className="post-grid">
                     {posts.map((post) => (
                       <div key={post.id} className="post">
-                        {post.image && <img src={post.image} alt="Post image"/>}
+                        {post.image && <img src={post.image} alt="Post image" loading="lazy"/>}
                         <p className="post-content">
                           {post.message || post.story}
                         </p>
