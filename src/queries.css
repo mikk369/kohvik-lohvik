@@ -11,6 +11,9 @@
   .heading-primary {
     font-size: 8.6rem;
   }
+  .post-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /********************/
@@ -23,6 +26,12 @@
     .heading-secondary {
         font-size: 3rem;
     }
+    .post-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .post img {
+        height: 20rem;
+      }
   }
 
 /********************/
@@ -35,7 +44,14 @@
     .header {
       padding: 0 3rem;
     }
-   
+    .post-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+      }
+    .post {
+      width: 50%;
+    }
   }
 
 /********************/
@@ -210,12 +226,6 @@
   .posts {
     padding: 0rem 1.6rem;
   }
-  .post .truncated {
-    font-size: 1.2rem;
-  }
-  .post .expanded {
-    font-size: 1.2rem;
-  }
   .menuimg {
     width: 100%;
     max-width: 32rem;
@@ -224,13 +234,26 @@
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .post {
+    width: 100%;
+  }
+  .logo {
+    display: none;
+  }
 }
 /********************/
 /*PRIMARY HEADING 464px, 336px*/
 /********************/
  @media (max-width: 29em) { 
+  .footer {
+    padding: 1rem;
+  }
   .footer-content p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+  }
+  .supporter-logos img{
+    width: 15rem; 
+    height: auto;
   }
   .supporter-names {
     font-size: 1.6rem; 
