@@ -4,6 +4,9 @@ import App from './App.jsx'
 import './index.css'
 import './queries.css'
 import PrivacyPolicy from './PrivacyPolicy.jsx';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 createRoot(document.getElementById('root')).render(
   <>

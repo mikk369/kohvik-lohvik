@@ -241,7 +241,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eef5ff);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
   height: 5.2rem;
 }
 
@@ -434,7 +434,7 @@ body.no-scroll {
   left: 0;
   width: 100%;
   height: 5.2rem;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #eef5ff);
   z-index: 1; /* Ensure it stays behind content */
   pointer-events: none; /* Prevent interaction issues */
 }
@@ -532,45 +532,51 @@ body.no-scroll {
 /********************/
 /*SUPPORTERS*/
 /********************/
-
 .section-supporters {
-  padding: 3.2rem 3.2rem 12.8rem;
+  padding: 3.2rem 2rem 12.8rem;
   position: relative;
   background: linear-gradient(to bottom, #f9f9f9, #fffef6, #eef5ff);
+  overflow: hidden;
 }
 
-.supporter-logos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+.supporter-image-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
 }
 
-.supporter-logos img {
-  height: 4.4rem;
-  margin: auto;
-}
-
-.supporter-logos img:last-child {
-  grid-column: 2;
-}
-
-.tootmissusteemid {
-  height: 6.4rem;
-  filter: brightness(1) invert(1);
+/* Style for the logos and names container */
+.supporter-logos,
+.supporter-names {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 30px;
+  /* animation: moveCarousel 20s linear infinite; */
 }
 
 .supporter-names {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
   font-size: 2rem;
-  line-height: 1.8;
-  color: #555;
+  text-align: center;
+  color: #0050A5;
 }
-.supporter-names p:last-child {
-  grid-column: 2;
+
+/* Circular background for logos */
+.supporter-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  object-fit: contain;
+  border: 1px solid #0050A5;
 }
+
+
+
 /********************/
 /*FOOTER*/
 /********************/

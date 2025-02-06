@@ -14,6 +14,10 @@
   .post-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .supporter-names {
+    font-size: 1.2rem;
+    gap: 20px; 
+  }
 }
 
 /********************/
@@ -44,6 +48,16 @@
     .header {
       padding: 0 3rem;
     }
+    .supporter-logos {
+      gap: 30px;
+    }
+    .supporter-image {
+      width: 130px; 
+      height: 130px;
+    }
+    .supporter-names{
+      font-size: 1rem;
+    }
     .post-grid {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -51,6 +65,10 @@
       }
     .post {
       width: 50%;
+    }
+    .tootmissusteemid {
+      width: 90px; 
+      height: 90px;
     }
   }
 
@@ -76,12 +94,8 @@
     .about-grid {
         row-gap: 9.6rem;
       }
-    .supporter-logos img {
-        height: 3rem;
-        margin: auto;
-      }
-    .supporter-names {
-        font-size: 1.6rem;
+      .supporter-logos {
+        gap: 20px;
       }
   }
 
@@ -93,7 +107,10 @@
       /* 8px /16px = 0.5 = 50% */
       font-size: 50%;
     }
-    
+    .supporter-names{
+      font-size: 1.2rem;
+    }
+
     .btn-mobile-nav {
       display: flex;
       justify-content: center;
@@ -152,12 +169,16 @@
     .main-nav-link:visited {
       font-size: 3rem;
     }
+    .supporter-image-wrapper  {
+      flex-direction: column;
+      gap: 2rem;
+    }
 }
 
 /********************/
-/*BELOW 832px*/
+/*BELOW 910px*/
 /********************/
-@media (max-width: 52em) {
+@media (max-width: 57em) {
   .heading-primary {
     font-size: 4.4rem;
   }
@@ -166,21 +187,6 @@
   }
   .about-description {
       font-size: 1.6rem;
-  }
-  .supporter-logos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
-  }
-  .supporter-logos img {
-    height: 3.6rem;
-    margin: auto;
-  }
-  .supporter-names {
-    grid-template-columns: 1fr;
-    font-size: 2rem;
-    line-height: 1.6;
   }
 }
 
@@ -242,26 +248,25 @@
   }
 }
 /********************/
-/*PRIMARY HEADING 464px, 336px*/
+/*PRIMARY HEADING 464px*/
 /********************/
  @media (max-width: 29em) { 
   .footer {
-    padding: 1rem;
+    padding: 0.8rem;
   }
   .footer-content p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
-  .supporter-logos img{
-    width: 15rem; 
-    height: auto;
-  }
-  .supporter-names {
-    font-size: 1.6rem; 
+  .footer-location {
+    display: none;
   }
   .values-grid {
     grid-template-columns: 1fr;
   }
 }
+/********************/
+/*PRIMARY HEADING 336px*/
+/********************/
  @media (max-width: 21em) { 
   .heading-primary {
     font-size: 5.2rem;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import CarouselComponent from './CarouselComponent';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -9,7 +10,7 @@ function App() {
   const toggleNav = () => {
     setIsnavopen(!isNavOpen);
   };
-  
+
   useEffect(() => {
     // Define the function to fetch posts and images
         const fetchPostsAndImages = async () => {
@@ -262,6 +263,10 @@ function App() {
                 <span className="close" title='Close'><i className="fa fa-times"></i></span>
               </div>
             </div>
+            <section className="section-supporters" id="supporters">
+              <h3 className="heading-tertiary">Lohvik toetajad ja koostööpartnerid läbi aastate</h3>
+                <CarouselComponent />
+            </section>
             <section className="posts" id="fb-posts">
             <h3 className="heading-tertiary">Uudised</h3>
               {loading ? (
@@ -291,35 +296,12 @@ function App() {
                 <p className='no-posts'>No posts to display</p>
               )}
             </section>
-            <section className="section-supporters" id="supporters">
-              <h3 className='heading-tertiary'>Lohvik toetajad ja koostööpartnerid läbi aastate</h3>
-                <div className="supporter-logos">
-                  <img src="kohalik.webp" alt="kohalik logo" className="supporter-image" />
-                  <img src="sportland.webp" alt="sportland logo" className="supporter-image" />
-                  <img src="tslogo.webp" alt="tootmissüsteemid" className="tootmissusteemid" />
-                  <img src="terminal.webp" alt="terminal logo" className="supporter-image" />
-                  <img src="noa.webp" alt="nõa logo" className="supporter-image" />
-                  <img src="teamhood.webp" alt="teamhood logo" className="supporter-image" />
-                  <img src="pohikool.webp" alt="nõo põhikool" className="supporter-image" />
-                </div>
-                <div className="supporter-names">
-                  <p>KOP Kohalik Omaalgatuse Programm</p>
-                  <p>Coffee People</p>
-                  <p>Ektaco CompuCach kassasüsteemid</p>
-                  <p>LEADER programm</p>
-                  <p>Kaupmees</p>
-                  <p>Schneider Electric Eesti</p>
-                  <p>Elva Vald</p>
-                  <p>Premia</p>
-                  <p>A le Coq</p>
-                  <p>Fifaa</p>
-                </div>
-            </section>
+            
             <div className="footer">
               <div className="footer-content">
                 <p className="contacts">
                   <span><i className="fa fa-envelope"></i>kohvik.elva@gmail.com</span>
-                  <span><i className="fa fa-map-marker"></i>Nõo, Veski 27-2</span>
+                  <span className='footer-location'><i className="fa fa-map-marker"></i>Nõo, Veski 27-2</span>
                   <span><i className="fa fa-phone"></i>+372 5030353</span>
                   <span>
                     <a href="/privaatsuspoliitika" className='policy-linik' target='_blank'>Privaatsuspoliitika</a>
