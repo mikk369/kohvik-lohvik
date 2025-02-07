@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('kohvik-lohvik-root')).render(
   <>
     <BrowserRouter>
       <Routes>
