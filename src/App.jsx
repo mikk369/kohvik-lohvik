@@ -293,7 +293,7 @@ function App() {
                     ))}
                   </div>
               ) : (
-                <p className='no-posts'>Hetkel postitused puuduvad</p>
+                <p className='no-posts'>Hetkel uudised puuduvad</p>
               )}
             </section>
             
