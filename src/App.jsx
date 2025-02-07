@@ -270,7 +270,7 @@ function App() {
             <section className="posts" id="fb-posts">
             <h3 className="heading-tertiary">Uudised</h3>
               {loading ? (
-                 <div className="loading-spinner">Loading...</div>
+                 <div className="loading-spinner"></div>
               ) : posts.length > 0 ? (
                   <div className="post-grid">
                     {posts.map((post) => (
