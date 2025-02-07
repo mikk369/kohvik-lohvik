@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import './index.css'
 
 const logos = [
     "kohalik.webp",
@@ -8,7 +9,7 @@ const logos = [
     "noa.webp",
     "teamhood.webp",
     "pohikool.webp",
-    "tslogoblack.webp",
+    "tslogo90.webp",
   ];
 
   const names = [
@@ -58,21 +59,18 @@ const SupportersCarousel = () => {
   };
 
   return (
-    
-      <div className="carousel-button-wrapper">
-        <Slider {...settings}>
-          {supporters.map((supporter, index) => (
-            <div key={index}>
-              <div className="supporter-image-wrapper">
-                <div className="supporter-logos">
-                    <img src={supporter.logo} alt={`${supporter.name} logo`} className="supporter-image" />
-                </div>
-              <p className="supporter-names">{supporter.name}</p>
-              </div>
+    <Slider {...settings}>
+      {supporters.map((supporter, index) => (
+        <div key={index}>
+          <div className="supporter-image-wrapper">
+            <div className="supporter-logos">
+                <img src={supporter.logo} alt={`${supporter.name} logo`} className="supporter-image" />
             </div>
-          ))}
-        </Slider>
-      </div>
+          <p className="supporter-names">{supporter.name}</p>
+          </div>
+        </div>
+      ))}
+    </Slider>
   );
 };
 

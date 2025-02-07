@@ -548,34 +548,30 @@ body.no-scroll {
   white-space: nowrap;
 }
 
-/* Style for the logos and names container */
-.supporter-logos,
-.supporter-names {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: 30px;
-  /* animation: moveCarousel 20s linear infinite; */
-}
-
 .supporter-names {
   font-size: 2rem;
   text-align: center;
   color: #0050A5;
 }
 
-/* Circular background for logos */
-.supporter-image {
+.supporter-logos {
   width: 150px;
   height: 150px;
+  padding: 10px;
+  border: 1px solid #0050A5;
   border-radius: 50%;
   background-color: white;
-  padding: 5px;
-  object-fit: contain;
-  border: 1px solid #0050A5;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
+.supporter-image {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /********************/
 /*FOOTER*/
