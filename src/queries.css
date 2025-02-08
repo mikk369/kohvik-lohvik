@@ -33,9 +33,6 @@
     .post-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .post img {
-        height: 20rem;
-      }
   }
 
 /********************/
