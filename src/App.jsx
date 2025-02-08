@@ -276,10 +276,11 @@ function App() {
                     {posts.map((post) => (
                       <div key={post.id} className="post">
                         {post.image && <img src={post.image} alt="Post image" loading="lazy"/>}
+                        <div className="post-footer">
                         <p className="post-content">
                           {post.message || post.story}
                         </p>
-                        <div className="post-footer">
+                        <div className="footer-container">
                           <div className="view-facebook">
                             <a href={`https://www.facebook.com/${post.id}`} target="_blank" rel="noopener noreferrer">
                               Loe rohkem...
@@ -288,6 +289,7 @@ function App() {
                           <p className="date">
                             <small>Postitatud: {new Date(post.created_time).toLocaleDateString()}</small>
                           </p>
+                        </div>
                         </div>
                       </div>
                     ))}
