@@ -181,7 +181,8 @@ body {
 /* change nav links and heading color after scrolling */
 .changeNavLiColor .main-nav-link:link,
 .changeNavLiColor .main-nav-link:visited,
-.changeNavLiColor .heading-secondary {
+.changeNavLiColor .heading-secondary,
+.changeNavLiColor .btn-mobile-nav {
   color: #0050A5;
 }
 .changeNavLiColor .main-nav-link:link:hover,
@@ -198,7 +199,7 @@ body {
 /* MOBiLE BUTTON*/
 .btn-mobile-nav {
   all: unset;
-  color: #333;
+  color: #fff;
   margin-left: auto;
   border: none;
   background: none;
