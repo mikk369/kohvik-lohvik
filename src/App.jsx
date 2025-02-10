@@ -130,7 +130,7 @@ function App() {
               <li><a href="#about" className="main-nav-link">Meie lugu</a></li>
               <li><a href="#menu" className="main-nav-link" id="menu-link">Menüü</a></li>
               <h2 className="heading-secondary">KOHVIK LOHVIK</h2>
-              <li><a href="#fb-posts" className="main-nav-link">Postitused</a></li>
+              <li><a href="#fb-posts" className="main-nav-link">Uudised</a></li>
               <li><a href="#supporters" className="main-nav-link">Toetajad</a></li>
               <li><a href="#our-values" className="main-nav-link" id="valueLink">Väärtused</a></li>
             </ul>
