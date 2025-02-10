@@ -555,22 +555,27 @@ body.no-scroll {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   white-space: nowrap;
+}
+
+.supporter-logos, .supporter-names {
+  flex: 1;
+  text-align: center;
 }
 
 .supporter-names {
   font-size: 2rem;
   text-align: center;
   color: #0050A5;
+  margin: 0 1rem;
 }
 
 .supporter-logos {
-  width: 150px;
+  width: 350px;
   height: 150px;
   padding: 10px;
   border: 1px solid #0050A5;
-  border-radius: 50%;
   background-color: white;
   overflow: hidden;
   display: flex;
@@ -669,5 +674,12 @@ a {
 
  a:hover {
   text-decoration: underline;
+}
+
+.footer-logo img{
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 20px;
+  
 }
 

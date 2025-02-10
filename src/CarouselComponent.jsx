@@ -10,6 +10,7 @@ const logos = [
     "teamhood.webp",
     "pohikool.webp",
     "tslogo90.webp",
+    "leaderlogo.webp",
   ];
 
   const names = [
@@ -36,7 +37,7 @@ const SupportersCarousel = () => {
     infinite: true,
     slidesToShow: 3,  
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
     dots: true, 
@@ -64,7 +65,7 @@ const SupportersCarousel = () => {
         <div key={index}>
           <div className="supporter-image-wrapper">
             <div className="supporter-logos">
-                <img src={supporter.logo} alt={`${supporter.name} logo`} className="supporter-image" />
+                <img src={supporter.logo} alt="Supporter logo" className="supporter-image" />
             </div>
           <p className="supporter-names">{supporter.name}</p>
           </div>

@@ -308,6 +308,9 @@ function App() {
                   <span>
                     <a href="/privaatsuspoliitika" className='policy-linik' target='_blank'>Privaatsuspoliitika</a>
                   </span>
+                  <div className="footer-logo">
+                    <img src="./leaderlogo.webp" alt="" />
+                  </div>
                 </p>
               </div>
             </div>
