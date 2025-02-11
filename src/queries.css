@@ -185,6 +185,9 @@
   .about-description {
       font-size: 1.6rem;
   }
+  .footer-content p {
+    font-size: 1.3rem;
+  }
 }
 
 /********************/
@@ -243,6 +246,9 @@
   .logo {
     display: none;
   }
+  .footer-content p {
+    font-size: 1rem;
+  }
 }
 /********************/
 /*PRIMARY HEADING 464px*/
@@ -259,6 +265,9 @@
   }
   .values-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-logo {
+    display: none;
   }
 }
 /********************/
