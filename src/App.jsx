@@ -17,7 +17,7 @@ function App() {
         const fetchPostsAndImages = async () => {
             try {
               // Fetch posts with media attachments directly
-              const postsResponse = await axios.get("https://fbtest.webcodes.ee/wp-json/token/v1/get-feed");
+              const postsResponse = await axios.get("https://lohvik.ee/wp-json/token/v1/get-feed");
               const postsData = postsResponse.data.posts;
               // Map over posts and get images directly from attachments
               const postsWithImages = postsData.map(post => {
