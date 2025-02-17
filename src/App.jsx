@@ -6,6 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [isNavOpen, setIsnavopen] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [image, setImage] = useState("");
 
   const toggleNav = () => {
     setIsnavopen(!isNavOpen);
@@ -32,6 +33,15 @@ function App() {
           };
             fetchPostsAndImages();
 
+        const fetchMenuImageUrl = async () => {
+          try {
+            const response = await axios.get("https://lohvik.ee/wp-json/image/v1/latest_menu");
+            setImage(response.data.image_url)
+          } catch (error) {
+            console.log("Error has occurred", error);
+          }
+        }
+        fetchMenuImageUrl();
             const landingSection = document.querySelector('.landing-section');
             const headerElement = document.querySelector('.header');
             
@@ -201,7 +211,7 @@ function App() {
             <div id="menu-modal" className="modal">
               <div className="modal-content">
                 <span className="close" title='Close'><i className="fa fa-times"></i></span>
-                <img src="./menuimg.webp" alt="Lohiku Kohviku Menüü" className="menuimg"/>
+                <img src={image} alt="Lohiku Kohviku Menüü" className="menuimg"/>
               </div>
             </div>
             <div id="values-modal" className="modal">
