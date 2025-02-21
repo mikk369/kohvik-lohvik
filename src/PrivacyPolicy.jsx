@@ -39,26 +39,20 @@ function Privacypolicy () {
             </li>
           </ul>
     
-          <h2 className="subtitle">Teie andmete kogumine ja kasutamine</h2>
+          {/* <h2 className="subtitle">Teie andmete kogumine ja kasutamine</h2>
           <h3 className="subsubtitle">Isikuandmed</h3>
-          <p className="paragraph">
-            Kasutades meie teenust, võime paluda teil esitada teatud isiklikult
-            tuvastatavat teavet, mida kasutatakse teiega ühenduse võtmiseks või teie
-            tuvastamiseks.
-          </p>
-    
           <h3 className="subsubtitle">Jälgimistehnoloogiad ja küpsised</h3>
           <p className="paragraph">
             Me kasutame küpsiseid ja sarnaseid tehnoloogiaid, et jälgida meie teenuse
             kasutamist ja salvestada teatud teavet.
-          </p>
+          </p> */}
     
-          <h2 className="subtitle">Teie isikuandmete jagamine</h2>
+          {/* <h2 className="subtitle">Teie isikuandmete jagamine</h2>
           <ul className="list">
             <li><strong>Teenusepakkujatega:</strong> võime jagada isikuandmeid teenuse parandamiseks.</li>
             <li><strong>Äritehingute puhul:</strong> andmeid võidakse edastada ettevõtte ühinemise või müügi korral.</li>
             <li><strong>Õiguskaitse eesmärkidel:</strong> me võime avalikustada teie andmeid, kui see on seadusega nõutud.</li>
-          </ul>
+          </ul> */}
     
           <h2 className="subtitle">Teie õigused</h2>
           <p className="paragraph">
